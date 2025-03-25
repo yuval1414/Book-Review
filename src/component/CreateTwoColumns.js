@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from '@mui/material/TextField';
 import { Typography, Box } from '@mui/material';
 import MultilineTextFields from '../component/MultilineTextFields';
+import SelectBookTitles from './SelectBookTitles';
 
 export default function CreateTwoColumns({ category, fieldType, review, onChange }) {
     const myStyle = {
@@ -31,12 +32,14 @@ export default function CreateTwoColumns({ category, fieldType, review, onChange
             </Box>
             <Box sx={{ alignItems: 'flex-start', paddingLeft: '30px' }}>
                 {fieldType === 'TextField' ? (
-                    <TextField sx={{myStyle}}
+                    <TextField sx={myStyle}
                     variant="standard" 
                     value={review} 
                     onChange={(e) => onChange(e.target.value)}
                     />
-                ): (
+                ): fieldType === 'SelectBookTitles' ?(
+                    <SelectBookTitles></SelectBookTitles>
+                ):(
                 <MultilineTextFields  
                 value={review} 
                 onChange={(e) => onChange(e.target.value)}

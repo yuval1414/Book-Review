@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import SearchIcon from '@mui/icons-material/Search';
+import { fontGrid } from '@mui/material/styles/cssUtils';
 
 // const useStyles = makeStyles(() => ({
 //     Button: {
@@ -29,9 +30,11 @@ function Home() {
     fontFamily: 'Copperplate, Papyrus, fantasy',
     fontWeight: 'bold',
     fontSize: '21px',
+    '&:hover': {
+      font: '#b12f2f',
+    }
   };
   return (
-    //style={{ padding: '10px', marginTop: '70px', backgroundColor: colors.grey}}
     <Box
       sx={{
         backgroundImage: `url(${cover})`,
@@ -42,9 +45,9 @@ function Home() {
         width: '100vw', // Adjust width as needed
       }}
     >
-      <AppBar position="static" style={{ backgroundColor: "transparent", alignItems: 'center' , padding:'5px'}}>
+      <AppBar position="static" style={{ backgroundColor: "transparent", alignItems: 'center', padding: '5px' }}>
         <Toolbar variant="dense">
-          <Typography fontSize= '30px' color="inherit" component="div" alignItems={'center'} style={{ fontFamily: 'Copperplate, Papyrus, fantasy' }}>
+          <Typography fontSize='30px' color="inherit" component="div" alignItems={'center'} style={{ fontFamily: 'Copperplate, Papyrus, fantasy' }}>
             Book Review Notebook
           </Typography>
         </Toolbar>
@@ -52,13 +55,21 @@ function Home() {
       <Stack direction={'column'} alignItems={'self-start'} spacing={5} padding={'130px'} >
         <Button style={{ color: 'white' }} onClick={() => navigate('/FillReview')}>
           <AddCircleOutlineIcon style={{ padding: '10px' }} sx={{ width: '40px', height: '40px' }}></AddCircleOutlineIcon>
-          <Typography sx={{ fontSize: '30px', paddingLeft: '25px' }} style={{ fontFamily: 'Copperplate, Papyrus, fantasy' }}>add a review</Typography></Button>
+          <Typography sx={{ fontSize: '30px', paddingLeft: '25px' ,  '&:hover': {
+      color: '#b12f2f',  fontWeight: 'bold',
+    }}} style={{
+            fontFamily: 'Copperplate, Papyrus, fantasy'
+          }}>add a review</Typography></Button>
         <Button style={{ color: 'white', marginTop: '3px' }} onClick={() => navigate('/SearchReview')}>
           <SearchIcon style={{ padding: '10px' }} sx={{ width: '40px', height: '40px' }}></SearchIcon>
-          <Typography sx={{ fontSize: '30px', paddingLeft: '25px' }} style={{ fontFamily: 'Copperplate, Papyrus, fantasy' }}>search a review</Typography></Button>
+          <Typography sx={{ fontSize: '30px', paddingLeft: '25px' , '&:hover': {
+      color: '#b12f2f',  fontWeight: 'bold',
+    }}} style={{ fontFamily: 'Copperplate, Papyrus, fantasy' }}>search a review</Typography></Button>
         <Button style={{ color: 'white', marginTop: '3px' }} onClick={() => navigate('/ShowNotebook')}>
           <MenuBookIcon style={{ padding: '10px' }} sx={{ width: '40px', height: '40px' }}></MenuBookIcon>
-          <Typography sx={{ fontSize: '30px', paddingLeft: '25px' }} style={{ fontFamily: 'Copperplate, Papyrus, fantasy' }}>show notebook </Typography></Button>
+          <Typography sx={{ fontSize: '30px', paddingLeft: '25px', '&:hover': {
+      color: '#b12f2f',  fontWeight: 'bold',
+    } }} style={{ fontFamily: 'Copperplate, Papyrus, fantasy' }}>show notebook </Typography></Button>
       </Stack >
     </Box>
 

@@ -1,17 +1,14 @@
 
 class BookReview {
     constructor() {
-        this.numOfStars = 1;
         this.bookName = '';
         this.bookNumberInSeries = '';
         this.author = '';
         this.genre = '';
         this.numberOfPages = '';
+        this.user = '';
+        this.numOfStars = 1;
         this.review = '';
-    }
-
-    setNumOfStars(numOfStars) {
-        this.numOfStars = numOfStars;
     }
 
     setBookName(bookName) {
@@ -28,6 +25,12 @@ class BookReview {
     }
     setNumberOfPages(numberOfPages) {
         this.numberOfPages = numberOfPages;
+    }
+    setUser(user){
+        this.user = user;
+    }
+    setNumOfStars(numOfStars) {
+        this.numOfStars = numOfStars;
     }
     setReview(review) {
         this.review = review;

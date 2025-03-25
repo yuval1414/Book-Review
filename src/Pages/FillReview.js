@@ -105,7 +105,7 @@ const FillReview = () => {
             flexDirection: 'column',
             lineHeight: 4,
           }}>
-            <StarsRating  value={newReview.numOfStars} onChange={handleRatingChange}/>
+            <StarsRating value={newReview.numOfStars} onChange={handleRatingChange} />
             <Box sx={{
               flexGrow: 1,
               display: 'flex', flexDirection: 'column'
@@ -131,8 +131,13 @@ const FillReview = () => {
             color: 'black', fontSize: '30px',
             fontFamily: 'Copperplate, Papyrus, fantasy',
             fontWeight: 'bold', backgroundColor: '#3cb464', borderRadius: 3,
+            '&:hover': {
+              backgroundColor: '#36d36a', 
+              color: 'inherit',
 
+            }
           }}
+          
           onClick={() => handleSaveButtonOnClick()}>Save</IconButton>
       </Box>
     </Box>
