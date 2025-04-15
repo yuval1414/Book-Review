@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Typography, IconButton, Paper, Button } from '@mui/material';
 import Box from '@mui/material/Box';
-import cover from '.././images/board.jpg';
+import cover from '.././images/computerScreenWithPicZoomIn.jpeg';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid2';
@@ -13,7 +13,7 @@ import MultilineTextFields from '../component/MultilineTextFields';
 import { alignProperty } from '@mui/material/styles/cssUtils';
 import CreateTwoColumns from '../component/CreateTwoColumns';
 import BookReview from '../ReviewClass';
-import { postData } from '.././APIservices/ApiService'
+import { postData } from '../APIservices/ApiServiceReviews'
 
 const FillReview = () => {
   const navigate = useNavigate();
@@ -76,8 +76,8 @@ const FillReview = () => {
         width: '100vw', // Adjust width as needed
       }}
     >
-      <Typography variant="h3" style={{ color: 'black', textAlign: "center", fontFamily: 'Copperplate, Papyrus, fantasy', fontWeight: 'bold', }}>
-        <IconButton onClick={() => navigate('/')} style={{ color: 'black', padding: '30px', alignItems: 'flex-start', left: 0 }} >
+      <Typography variant="h3" style={{ paddingTop: '12vh', paddingBottom: '4vh', color: 'black', textAlign: "center", fontFamily: 'Copperplate, Papyrus, fantasy', fontWeight: 'bold', }}>
+        <IconButton onClick={() => navigate('/')} style={{ color: 'black', padding: '20px', alignItems: 'flex-start', left: 0 }} >
           <ArrowCircleLeftOutlinedIcon sx={{ width: '60px', height: '60px' }}></ArrowCircleLeftOutlinedIcon></IconButton>Add a Review
       </Typography>
       <Box
@@ -85,23 +85,21 @@ const FillReview = () => {
           flexGrow: 1, display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'
         }}>
         <Paper
-          elevation={3}
           sx={{
-            height: '80vh', // Adjust height as needed
+            height: '80vh',
             width: '45vw',
             marginBottom: 2,
-            position: 'relative',
-            backgroundColor: 'blanchedalmond',
+            backgroundColor: '#FFD7E9',
             display: 'flex',
             flexDirection: 'column',
-            blockSize: 'fit-content'
+            blockSize: 'fit-content',
           }}>
           <div style={{ width: '30px', height: '30px', backgroundColor: 'red', borderRadius: '15px', alignSelf: 'center' }} />
           <Box sx={{
             flexGrow: 1,
             display: 'flex',
             alignItems: 'center',
-            padding: '5vh',
+            padding: '2vh',
             flexDirection: 'column',
             lineHeight: 4,
           }}>
@@ -124,21 +122,21 @@ const FillReview = () => {
                 onChange={(value) => handleFieldsChange('review', value)}></CreateTwoColumns>
             </Box>
           </Box>
-        </Paper>
-        <IconButton
+          <IconButton
           variant="contained"
           sx={{
-            color: 'black', fontSize: '30px',
+            color: 'black', fontSize: '30px', width: '80px', height: '50px', alignSelf: 'center',
             fontFamily: 'Copperplate, Papyrus, fantasy',
-            fontWeight: 'bold', backgroundColor: '#3cb464', borderRadius: 3,
+            fontWeight: 'bold', backgroundColor: '#ffa1ca', borderRadius: 3,
             '&:hover': {
               backgroundColor: '#36d36a', 
               color: 'inherit',
-
             }
           }}
           
           onClick={() => handleSaveButtonOnClick()}>Save</IconButton>
+        </Paper>
+        
       </Box>
     </Box>
 

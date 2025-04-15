@@ -38,7 +38,28 @@ export const getData = async () => {
         const response = await apiClient.get(`/bookName/${data}`);
         return response;
       } catch (error) {
-        console.error('Error posting data:', error);
+        console.error('Error getting reviews bt title:', error);
         throw error;
       }
   }; 
+
+  export const getReviewsByUsername = async (data) => {
+    try {
+      const response = await apiClient.get(`/user/${data}`);
+      return response;
+    } catch (error) {
+      console.error('Error getting reviews by username:', error);
+      throw error;
+    }
+  };
+
+    export const getReviewsAndBooksByUsername = async (username) => {
+      try {
+        const response = await apiClient.get(`/user/myReviews/${username}`);
+        console.log("getReviews:" + response);
+        return response;
+      } catch (error) {
+        console.error('Error getting reviews by username:', error);
+        throw error;
+      }
+}; 
